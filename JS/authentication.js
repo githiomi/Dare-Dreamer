@@ -6,7 +6,7 @@ import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
 // For authentication
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getAuth, updateProfile, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -60,6 +60,17 @@ signUpButton.addEventListener('click', (e) => {
             // Update UI
             alert(`User ${user} created successfully!`);
             console.log(`Created user -----> ${user}`);
+
+            // Add the new user's display name
+            updateProfile(user, {
+                displayName: username, 
+                email: emailAddress,
+                photoURL: "https://example.com/jane-q-user/profile.jpg"
+              }).then(() => {
+                console.log(`${user} has been added successfully`)
+              }).catch((error) => {
+                console.log(`${user} has NOT been added successfully`)
+              });
 
             // Saving user data to database
             const lastLoggedIn = new Date();

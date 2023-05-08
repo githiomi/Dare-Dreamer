@@ -12,7 +12,7 @@ window.addEventListener('scroll', () => {
         rightCloud.style.right = value * -1 + 'px';
 
         moon.classList.add('toLeft');
-    }else{
+    } else {
         moon.classList.remove('toLeft');
     }
 
@@ -42,7 +42,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebas
 import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
 // For authentication
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -66,25 +66,39 @@ const auth = getAuth();
 
 // UI
 const username = document.querySelector('.username');
+const logout = document.querySelector('.logout');
 
 // Observes if the user is signed in or not
 onAuthStateChanged(auth, (user) => {
     if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      
-      // If the user is signed in
-      // Get the name of the user
-      const name = auth.currentUser.displayName
-      console.log(uid + " Name: " + name);
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        const uid = user.uid;
 
-      // Update UI with data
-      username.innerHTML = uid;
+        // If the user is signed in
+        // Get the name of the user
+        const name = auth.currentUser.displayName
+        console.log(uid + " Name: " + name);
+
+        // Update UI with data
+        username.innerHTML = uid;
 
     } else {
-      // If the user is not signed in
-      // Re-route to login page
-      window.location = "../HTML/login.html"
+        // If the user is not signed in
+        // Re-route to login page
+        window.location = "../HTML/login.html"
     }
-  });
+});
+
+// Add an click event listener to the logout button
+logout.addEventListener('click', (e) => {
+
+    signOut (auth)
+        .then( () => {
+            console.log("User logged out!");
+        })
+        .catch( (e) => {
+            console.log("User NOT logged out!");
+        });
+
+});
