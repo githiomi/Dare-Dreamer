@@ -44,7 +44,7 @@ body {
     scroll-behavior: smooth;
 }
 
-li{
+li {
     list-style: none;
 }
 
@@ -61,7 +61,6 @@ a {
     right: -10%;
     border-radius: 55%;
     box-shadow: 2px 2px 3rem var(--alt-white-color);
-    transform: translateX(0);
     transition: all .9s ease-in-out;
     z-index: -1;
 }
@@ -155,7 +154,7 @@ a {
     justify-content: center;
 }
 
-.bg{
+.bg {
     position: absolute;
     top: 100vh;
     left: 0;
@@ -164,7 +163,7 @@ a {
     z-index: -10;
 }
 
-.bg img{
+.bg img {
     width: 100%;
     aspect-ratio: 16/9;
 }
@@ -207,7 +206,7 @@ a {
     justify-content: center;
 }
 
-.responseMood .special{
+.responseMood .special {
     font-weight: 500;
 }
 
@@ -255,7 +254,7 @@ form {
     z-index: 10;
 }
 
-#dreamTextArea{
+#dreamTextArea {
     width: 100%;
 }
 
@@ -327,6 +326,12 @@ input[type="submit"] {
     transition: all .5s ease-in-out;
 }
 
+@media all and (max-width: 1400px) {
+    .toLeft {
+        transform: translateX(-250%) translateY(15%) rotate(180deg);
+    }
+}
+
 @media all and (max-width: 1100px) {
 
     /* Moon */
@@ -343,21 +348,34 @@ input[type="submit"] {
         width: 20rem;
     }
 
-    .dreamInput{
+    .toLeft {
+        transform: translateX(-300%) translateY(15%) rotate(180deg);
+    }
+
+    .dreamInput {
         width: 60%;
     }
 
-    .dreamResponse{
+    .dreamResponse {
         width: 70%;
     }
 
-    .responseContent{
+    .responseContent {
         text-align: center;
     }
 }
 
+@media all and (max-width: 900px) {
 
-@media all and (max-width:700px){
+    .toLeft {
+        transform: translateX(-230%) translateY(15%) rotate(180deg);
+    }
+
+}
+
+
+@media all and (max-width:700px) {
+
     /* Moon */
     .moon {
         right: -20%;
@@ -372,16 +390,20 @@ input[type="submit"] {
         bottom: 0;
     }
 
-    .title{
+    .toLeft {
+        transform: translateX(-200%) translateY(15%) rotate(180deg);
+    }
+
+    .title {
         font-size: 2.5rem;
         margin: 2rem;
     }
 
-    .description{
+    .description {
         font-size: 1rem;
     }
 
-    .dreamInput{
+    .dreamInput {
         width: 80%;
     }
 
@@ -389,7 +411,7 @@ input[type="submit"] {
         padding: .8rem .3rem;
     }
 
-    .dreamResponse{
+    .dreamResponse {
         width: 80%;
     }
 
@@ -397,11 +419,11 @@ input[type="submit"] {
         font-size: 1.5rem;
         margin: 1.5rem;
     }
-    
+
     .responseContent {
         padding: 1rem 1.5rem;
     }
-    
+
     .responseMood {
         color: var(--main-theme-color);
         text-align: center;
@@ -409,13 +431,13 @@ input[type="submit"] {
         align-items: center;
         justify-content: center;
     }
-    
+
     .mood {
         color: var(--mood-color);
         font-weight: 600;
         padding: 2px;
     }
-    
+
     .emoji {
         font-size: 1.5rem;
         margin: .5rem;
@@ -424,7 +446,12 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 500px) {
-    .dreamResponse{
+
+    .toLeft {
+        transform: translateX(-120%) translateY(15%) rotate(180deg);
+    }
+
+    .dreamResponse {
         width: 90%;
     }
 
@@ -432,21 +459,28 @@ input[type="submit"] {
         font-size: 1.5rem;
         margin: 1rem;
     }
-    
+
     .responseContent {
         padding: .5rem 1rem;
     }
-    
+
     .responseContent {
         font-size: .9rem;
     }
 
-    .responseMood, .responseMood .special{
+    .responseMood,
+    .responseMood .special {
         font-size: .8rem;
     }
-    
+
     .emoji {
         font-size: 1rem;
         margin: .5rem;
+    }
+}
+
+@media all and (max-width: 400px) {
+    .toLeft {
+        transform: translateX(-100%) translateY(15%) rotate(180deg);
     }
 }
