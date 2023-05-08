@@ -38,6 +38,8 @@ It is made entirely using Visual Studio Code to create all the files and to achi
 * `HTML` - For the page structure and markup
 * `CSS` - For the page styling
 * `JS` - For the page interactivity and special effects
+* `Firebase` - For the application user authentication
+* `ChatGPT API` - For dream prediction and interpretation
 
 ## 🪲 Known Bugs
 
