@@ -86,7 +86,7 @@ a {
     position: fixed;
     z-index: 20;
     aspect-ratio: 16 / 9;
-    width: 40rem;
+    width: 30rem;
     bottom: 10%;
     right: 10%;
     animation: bounce 3s infinite linear alternate;
