@@ -145,25 +145,25 @@ a {
 
 /* Dream Section */
 #dream {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 
 .bg{
     position: absolute;
-    top: 0;
+    top: 100vh;
     left: 0;
     width: 100%;
+    height: 100%;
     z-index: -10;
 }
 
 .bg img{
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 16/9;
 }
 
 .dreamResponse {
