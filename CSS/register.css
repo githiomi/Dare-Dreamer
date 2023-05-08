@@ -70,6 +70,7 @@ a {
     border-radius: 55%;
     box-shadow: 2px 2px 3rem var(--alt-white-color);
     transition: all .3s ease-in-out;
+    animation: bounce 5s infinite alternate;
 }
 
 /* Clouds */
@@ -103,11 +104,11 @@ a {
     }
 
     50% {
-        transform: translateY(10%);
+        transform: translateY(0%);
     }
 
     100% {
-        transform: translateY(0);
+        transform: translateY(10%);
     }
 
 }

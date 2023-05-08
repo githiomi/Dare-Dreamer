@@ -3,7 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
 
 // For the Database
-import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
 
 // For authentication
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
@@ -49,7 +49,14 @@ loginButton.addEventListener('click', (e) => {
             const user = userCredential.user;
             
             // Update the UI
-            console.log(`${user} has been logged in`)
+            console.log(`${user} has been logged in`);
+
+            // Update DB data
+            const lastLoggedIn = new Date();
+            update(ref(database, 'Dreamers/' + user.uid), {
+                lastLoggedIn : lastLoggedIn
+            });
+            
         })
         .catch((error) => {
             const errorCode = error.code;
