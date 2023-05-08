@@ -7,7 +7,7 @@
 `Dare Dreamer` is a web application that enables users of the application to put in their dreams (or nightmares) and then we handle the rest by giving the user a premonitory prediction and interpretation of what the dream could mean.
 ## 👀 Product Preview
 
-![Screenshot](./assets/images/Screenshot.png)
+![Screenshot](./Assets/Images/Screenshot.png)
 
 ## 🏗️ Live Pages
 
