@@ -11,7 +11,7 @@
 
     <!-- Tab Content -->
     <title>Dare Dreamer</title>
-    <link rel="icom" type="image/x-icon" href="./Assets/Images/Dream_Logo.png">
+    <link rel="icon" type="image/x-icon" href="./Assets/Images/Dream_Logo.png">
 
     <!-- Box Icons Link -->
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
@@ -26,6 +26,87 @@
     <script src="JS/index.js" defer></script>
 </head>
 <body>
+
+    <!-- Moon image -->
+    <img class="moon" src="./Assets/Images/moon.png" alt="">
+    <!-- Cloud Images -->
+    <img class="cloud1" src="./Assets/Images/cloud1.png" alt="Cloud">
+    <img class="cloud2" src="./Assets/Images/cloud3.png" alt="Cloud">
+
+    <section id="intro">
+
+        <!-- Application Title -->
+        <h2 class="title">
+            Dream Forecast
+        </h2>
+
+        <!-- Application Description -->
+        <p class="description">
+            <span class="special">Dream Forecast</span> is a revolutionary platform where you can easily describe a
+            dream you had and we handle the rest.
+            <br><br>
+            Using your dream, we give you a personalized premonitory prediction and useful information about any
+            relevant upcoming events.
+            <br><br>
+            It works with <span class="special">nightmares</span> too!
+        </p>
+
+        <a href="#dream">
+            <i class='dribble bx bxs-chevrons-down bx-fade-up'></i>
+        </a>
+
+    </section>
+
+    <section id="dream">
+
+        <div id="dreamResponse" class="dreamResponse">
+
+            <div class="responseTitle">
+                Here is what we gathered:
+            </div>
+
+            <div class="responseContent">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio recusandae consequatur animi. Unde
+                dolor harum, possimus hic expedita eligendi, at placeat minima doloremque, optio delectus blanditiis
+                odit ducimus. Vel natus asperiores quae provident nisi autem, laudantium labore numquam id commodi sed
+                recusandae odit illo aperiam similique qui nobis quia nam sequi veniam corrupti aliquid omnis tempora
+                quasi. Incidunt laudantium dolores aut ab eos, quam ut, deserunt adipisci expedita iure, provident id
+                sapiente accusantium voluptates ipsa exercitationem alias! Ratione temporibus quaerat amet cumque
+                similique officia minus quam maxime, saepe magni dolores in veritatis porro possimus? Eveniet, ab
+                delectus! Modi, fugiat consequuntur!
+            </div>
+
+            <div class="responseMood">
+                <span class="special">Your mood: </span> (<span class="mood"> nervous </span>) <span
+                    class="emoji">😅</span>
+            </div>
+
+        </div>
+
+        <div class="dreamInput">
+
+            <form action="#">
+                <div class="inputField">
+
+                    <!-- <textarea type="text" name="dreamInput" id="dreamInput" required="required"> </textarea>
+                    <span>Please describe your dream...</span>
+                    <i> <!-- Input goes here --> <!-- </i> -->
+
+                    <textarea name="dreamTextArea" id="dreamTextArea" placeholder="Enter your dream here"></textarea>
+                    <p class="inputTitle">Please describe your dream...</p>
+
+                </div>
+
+                <!-- Submit Button -->
+                <div id="interpret" class="interpret-btn">
+                    <input type="submit" value="Interpret">
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
     
 </body>
 </html>

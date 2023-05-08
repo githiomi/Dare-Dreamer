@@ -1,0 +1,389 @@
+/* Charset */
+@charset 'UTF-8';
+
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Poppins:wght@400;700&display=swap');
+
+
+/* Global Styles */
+:root {
+    --mood-color: orange;
+    --main-bg-color: #02020f;
+    --main-theme-color: #f18f01;
+    --alt-white-color: #f4f4f6;
+    --dull-white-color: #8f8f8f;
+    --secondary-theme-color: #4d6a6d;
+    --alt-color: #5b3000;
+    --card-bg-color: #23242a;
+    --raisin-black-color: #221D23;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: .4rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--main-bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--main-theme-color);
+    opacity: .2;
+    border-radius: 100vw;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    opacity: 1;
+}
+
+body {
+    background-color: var(--main-bg-color);
+    color: var(--alt-white-color);
+    font-family: 'Poppins', sans-serif;
+    background: url('../Assets/Images/Dreaming.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Moon */
+.moon {
+    aspect-ratio: 1/1;
+    position: fixed;
+    width: 30rem;
+    top: -15%;
+    right: -10%;
+    border-radius: 55%;
+    box-shadow: 2px 2px 3rem var(--alt-white-color);
+    transform: translateX(0);
+    transition: all .9s ease-in-out;
+    z-index: -1;
+}
+
+.toLeft {
+    transform: translateX(-400%);
+}
+
+/* Clouds */
+.cloud1 {
+    position: fixed;
+    z-index: 20;
+    aspect-ratio: 16 / 9;
+    width: 30rem;
+    top: 10%;
+    left: 10%;
+    animation: bounce 2s infinite linear alternate;
+    transition: all .3s ease-in-out;
+}
+
+.cloud2 {
+    position: fixed;
+    z-index: 20;
+    aspect-ratio: 16 / 9;
+    width: 40rem;
+    bottom: 10%;
+    right: 10%;
+    animation: bounce 3s infinite linear alternate;
+    transition: all .3s ease-in-out;
+}
+
+/* Bounce Effect */
+@keyframes bounce {
+
+    0% {
+        transform: translateY(-10%);
+    }
+
+    50% {
+        transform: translateY(10%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Introduction Section */
+#intro {
+    text-align: center;
+    line-height: 2rem;
+    font-size: 1.2rem;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 1.5rem;
+}
+
+.title,
+.responseTitle {
+    color: var(--main-theme-color);
+    text-transform: uppercase;
+    font-size: 4rem;
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.special {
+    color: var(--main-theme-color);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.dribble {
+    position: absolute;
+    bottom: 5%;
+    color: var(--main-theme-color);
+    font-size: 2rem;
+}
+
+/* Dream Section */
+#dream {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.dreamResponse {
+    display: none;
+}
+
+.show {
+    transition: all .3s ease-in-out;
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    background-color: var(--main-bg-color);
+    border-radius: 1rem;
+    padding: 1rem 1rem;
+    margin-bottom: 3rem;
+    box-shadow: 1px 1px 3rem var(--mood-color);
+    cursor: pointer;
+}
+
+.dreamResponse.show:hover {
+    box-shadow: 2px 2px 5rem var(--mood-color);
+}
+
+.responseTitle {
+    font-size: 2rem;
+    margin: 2rem;
+}
+
+.responseContent {
+    padding: 1rem 3rem;
+}
+
+.responseMood {
+    color: var(--main-theme-color);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.responseMood .special{
+    font-weight: 500;
+}
+
+.mood {
+    color: var(--mood-color);
+    font-weight: 600;
+    padding: 2px;
+}
+
+.emoji {
+    font-size: 1.8rem;
+    margin: .5rem;
+}
+
+/* Dream Input */
+.dreamInput {
+    width: 30%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dreamInput form .inputField {
+    width: 100%;
+    position: relative;
+    margin: 1.5rem auto;
+}
+
+.dreamInput form .inputField textarea {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    padding: .8rem;
+    background-color: var(--alt-white-color);
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: var(--main-bg-color);
+    letter-spacing: .08rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+#dreamTextArea::placeholder {
+    color: var(--main-bg-color);
+    font-weight: 600;
+    letter-spacing: 0;
+}
+
+.inputTitle {
+    position: absolute;
+    top: -50%;
+    font-size: .9rem;
+    color: var(--main-theme-color);
+}
+
+.interpret-btn {
+    position: relative;
+    margin: 1rem auto;
+    outline: none;
+    border: none;
+    background-color: var(--alt-white-color);
+    cursor: pointer;
+    border-radius: 1rem;
+    font-weight: 600;
+    transition: all .3s ease-in;
+    overflow: hidden;
+    padding: .1rem .5rem;
+}
+
+.interpret-btn:active {
+    opacity: .5;
+}
+
+.interpret-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background-color: var(--main-theme-color);
+    transition: all .3s ease-out;
+    border-radius: 1rem;
+}
+
+.interpret-btn:hover {
+    background-color: transparent;
+    color: var(--alt-white-color);
+}
+
+.interpret-btn:hover::before {
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 100%;
+    height: 100%;
+    padding: 1rem .5rem;
+    font-weight: 600;
+    letter-spacing: .05rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+@media all and (max-width: 1100px) {
+
+    /* Moon */
+    .moon {
+        width: 20rem;
+    }
+
+    /* Clouds */
+    .cloud1 {
+        width: 20rem;
+    }
+
+    .cloud2 {
+        width: 20rem;
+    }
+}
+
+@media all and (max-width: 1100px) {
+
+    .dreamResponse{
+        width: 70%;
+    }
+
+    .responseContent{
+        text-align: center;
+    }
+}
+
+
+@media all and (max-width:600px){
+    /* Moon */
+    .moon {
+        right: -20%;
+    }
+
+    /* Clouds */
+    .cloud1 {
+        top: 0;
+    }
+
+    .cloud2 {
+        bottom: 0;
+    }
+
+    .dreamResponse{
+        width: 80%;
+    }
+
+    .responseTitle {
+        font-size: 1.5rem;
+        margin: 1.5rem;
+    }
+    
+    .responseContent {
+        padding: 1rem 1.5rem;
+    }
+    
+    .responseMood {
+        color: var(--main-theme-color);
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mood {
+        color: var(--mood-color);
+        font-weight: 600;
+        padding: 2px;
+    }
+    
+    .emoji {
+        font-size: 1.5rem;
+        margin: .5rem;
+    }
+}
