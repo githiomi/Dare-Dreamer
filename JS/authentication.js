@@ -2,8 +2,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
 
+// For the Database
+import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
+
 // For authentication
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +26,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const database = getDatabase(app);
 const auth = getAuth();
 
 // Add event listener to the sign up button
@@ -30,6 +35,7 @@ let signUpButton = document.getElementById('registerButton');
 signUpButton.addEventListener('click', (e) => {
 
     // What happens when the sign up button is clicked
+    e.preventDefault();
 
     // Get user data
     let firstName = document.getElementById('firstName').value;
@@ -39,22 +45,37 @@ signUpButton.addEventListener('click', (e) => {
     let password = document.getElementById('password').value;
     let confirmPassword = document.getElementById('confirmPassword').value;
 
-    if ( password !== confirmPassword ) {
+    if (password !== confirmPassword) {
         alert(`Passwords must match!`);
         return;
     }
 
-    // Firebase 
+    console.log("Creating user...");
+    // Create new Firebase user
     createUserWithEmailAndPassword(auth, emailAddress, password)
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
+            // Update UI
             alert(`User ${user} created successfully!`);
             console.log(`Created user -----> ${user}`);
+
+            // Saving user data to database
+            set(ref(database, 'Dreamers/' + user.uid), {
+                firstName: firstName,
+                lastName: lastName,
+                userName: username,
+                email: emailAddress
+            });
+
+            console.log("Data saved to DB");
+
         })
         .catch((error) => {
+            // Not signed up
             const errorCode = error.code;
             const errorMessage = error.message;
+            // Update UI
             alert(`User ${user} could not be created!`);
             console.log(`Error code: ${errorCode}! -----> Error message: ${errorMessage}`);
         });
