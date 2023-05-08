@@ -30,7 +30,8 @@ const database = getDatabase(app);
 const auth = getAuth();
 
 // Add event listener to the sign up button
-let signUpButton = document.getElementById('registerButton');
+const signUpButton = document.getElementById('registerButton');
+const errorContainer = document.querySelector('.error');
 
 signUpButton.addEventListener('click', (e) => {
 
@@ -86,7 +87,10 @@ signUpButton.addEventListener('click', (e) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             //Update UI
-            alert(`User could not be created! -----> Error message: ${errorMessage}`);
+            // Make error visible
+            errorContainer.innerHTML += `Error: ${errorMessage}`;
+            errorContainer.classList.add('display');
+            // alert(`User could not be created! -----> Error message: ${errorMessage}`);
             console.log(`There has been an error creating the user! \n-----> Error code: ${errorCode}\nError message: ${errorMessage}`);
         });
 
