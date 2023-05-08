@@ -32,3 +32,6 @@ interpreteBtn.addEventListener('click', (e) => {
     dreamResponse.classList.add('show');
 
 });
+
+
+// Firebase user authentication

@@ -30,7 +30,8 @@ const database = getDatabase(app);
 const auth = getAuth();
 
 // Add event listener to the sign up button
-let loginButton = document.getElementById('loginButton');
+const loginButton = document.getElementById('loginButton');
+const errorContainer = document.querySelector('.error');
 
 loginButton.addEventListener('click', (e) => {
 
@@ -56,13 +57,24 @@ loginButton.addEventListener('click', (e) => {
             update(ref(database, 'Dreamers/' + user.uid), {
                 lastLoggedIn : lastLoggedIn
             });
+
+            // If user is valid, log in
+            if (user){
+                console.log(user);
+                window.location = "../index.html";
+            }else{
+                return;
+            }  
             
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             // Update UI
-            alert(`User could not be logged in! -----> Error code ${errorCode}`);
+            // Make error visible
+            errorContainer.innerHTML += `Error: ${errorMessage}`;
+            errorContainer.classList.add('display');
+            // alert(`User could not be logged in! -----> Error code ${errorCode}`);
             console.log(`There has been an error logging in the user! \n-----> Error code: ${errorCode}\nError message: ${errorMessage}`);
         });
 })

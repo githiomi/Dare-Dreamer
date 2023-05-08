@@ -61,14 +61,24 @@ signUpButton.addEventListener('click', (e) => {
             console.log(`Created user -----> ${user}`);
 
             // Saving user data to database
+            const lastLoggedIn = new Date();
             set(ref(database, 'Dreamers/' + user.uid), {
                 firstName: firstName,
                 lastName: lastName,
                 userName: username,
-                email: emailAddress
+                email: emailAddress,
+                lastLoggedIn : lastLoggedIn
             });
 
             console.log("Data saved to DB");
+
+            // If user is created successfully, go to home page
+            if (user){
+                console.log(user);
+                window.location = "../index.html";
+            }else{
+                return;
+            }
 
         })
         .catch((error) => {

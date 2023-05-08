@@ -68,7 +68,8 @@ a {
     top: -10%;
     right: -10%;
     border-radius: 55%;
-    box-shadow: 2px 2px 3rem var(--alt-white-color);
+    box-shadow: 2px 2px 5rem var(--alt-white-color);
+    animation: bounce 5s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
@@ -356,6 +357,20 @@ input[type="submit"] {
     border-radius: 1rem;
     background-color: transparent;
     cursor: pointer;
+}
+
+/* Error message */
+.error{
+    display: none;
+}
+
+.display{
+    display: block;
+    font-size: .7rem;
+    text-align: center;
+    padding: 1rem;
+    color: red;
+    text-transform: uppercase;
 }
 
 @media all and (max-width: 1600px) {
