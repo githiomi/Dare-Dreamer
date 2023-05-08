@@ -53,7 +53,7 @@ In order to enjoy the features of this application you will need to:
   desired directory.
 * Open the project in an IDE of choice (Eg: Visual Studio Code).
 * Run the project using the `Live Server` extension.
-* Enjoy the `Employee Hive` Angular Application.
+* Enjoy the `Dare Dreamer` website.
 
 ## 📧 Support and contact details
 
