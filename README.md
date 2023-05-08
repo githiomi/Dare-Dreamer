@@ -1,10 +1,11 @@
-# DARE DREAMER
+# <a href="https://githiomi.github.io/Dare-Dreamer" target="_blank"><img style="margin: 0px 5px" src="./Assets/Images/Dream_Logo.png" alt="Click Hive" height="40" /></a>DARE DREAMER
 
 > Created by <a href="https://www.github.com/githiomi"> Daniel Githiomi </a>
 
 ## 🚧 Description
 
 `Dare Dreamer` is a web application that enables users of the application to put in their dreams (or nightmares) and then we handle the rest by giving the user a premonitory prediction and interpretation of what the dream could mean.
+
 ## 👀 Product Preview
 
 ![Screenshot](./Assets/Images/Screenshot.png)
