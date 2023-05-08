@@ -67,7 +67,7 @@ a {
 }
 
 .toLeft {
-    transform: translateX(-350%) translateY(15%);
+    transform: translateX(-360%) translateY(15%) rotate(180deg);
 }
 
 /* Clouds */
@@ -141,7 +141,7 @@ a {
 
 .dribble {
     position: absolute;
-    bottom: 5%;
+    bottom: 10%;
     color: var(--main-theme-color);
     font-size: 2rem;
 }
