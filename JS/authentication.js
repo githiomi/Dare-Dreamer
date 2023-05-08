@@ -75,9 +75,9 @@ signUpButton.addEventListener('click', (e) => {
             // Not signed up
             const errorCode = error.code;
             const errorMessage = error.message;
-            // Update UI
-            alert(`User ${user} could not be created!`);
-            console.log(`Error code: ${errorCode}! -----> Error message: ${errorMessage}`);
+            //Update UI
+            alert(`User could not be created! -----> Error message: ${errorMessage}`);
+            console.log(`There has been an error creating the user! \n-----> Error code: ${errorCode}\nError message: ${errorMessage}`);
         });
 
 })

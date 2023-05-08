@@ -41,9 +41,6 @@ loginButton.addEventListener('click', (e) => {
     let emailAddress = document.getElementById('emailAddress').value;
     let password = document.getElementById('password').value;
 
-    console.log(emailAddress, password);
-
-
     console.log("Logging in...");
     // Login the Firebase user
     signInWithEmailAndPassword(auth, emailAddress, password)
@@ -59,6 +56,6 @@ loginButton.addEventListener('click', (e) => {
             const errorMessage = error.message;
             // Update UI
             alert(`User could not be logged in! -----> Error code ${errorCode}`);
-            console.log(`There has been an error! \n-----> Error message: ${errorMessage}`);
+            console.log(`There has been an error logging in the user! \n-----> Error code: ${errorCode}\nError message: ${errorMessage}`);
         });
 })
