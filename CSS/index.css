@@ -36,6 +36,16 @@
     opacity: 1;
 }
 
+/* Common CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    transition: all .2s ease-in-out;
+}
+
 body {
     background-color: var(--main-bg-color);
     color: var(--alt-white-color);
@@ -107,6 +117,63 @@ a {
         transform: translateY(0);
     }
 
+}
+
+/* Profile Section */
+.profile {
+    z-index: 10;
+    display: flex;
+    width: fit-content;
+    padding: .5rem 2rem;
+    border-radius: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--card-bg-color);
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 1px 1px 2rem var(--main-theme-color);
+}
+
+.profile:hover {
+    box-shadow: 2px 2px 5rem var(--main-theme-color);
+}
+
+.profilePicture {
+    background-color: var(--main-bg-color);
+    padding: 1rem;
+    border-radius: 50%;
+}
+
+.profilePicture img {
+    aspect-ratio: 1 / 1;
+    width: 5rem;
+}
+
+.bio .username {
+    color: var(--main-theme-color);
+    font-weight: 600;
+}
+
+.bio p,
+.bio i {
+    margin: .5rem;
+}
+
+.logout {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.bio i {
+    font-size: 1.5rem;
+    color: var(--main-theme-color);
+    z-index: 20;
+    cursor: pointer;
 }
 
 /* Introduction Section */
@@ -371,6 +438,41 @@ input[type="submit"] {
         transform: translateX(-230%) translateY(15%) rotate(180deg);
     }
 
+    .cloud1 {
+        z-index: -20;
+    }
+
+    /* Profile Section */
+    .profile {
+        padding: .5rem 1rem;
+        gap: 1rem;
+    }
+
+    .profilePicture {
+        padding: .8rem;
+    }
+
+    .profilePicture img {
+        aspect-ratio: 1 / 1;
+        width: 4rem;
+    }
+
+    .bio{
+        font-size: .9rem;
+    }
+
+    .bio p,
+    .bio i {
+        margin: .3rem;
+    }
+
+    .bio i {
+        font-size: 1rem;
+        color: var(--main-theme-color);
+        z-index: 20;
+        cursor: pointer;
+    }
+
 }
 
 
@@ -480,6 +582,10 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 400px) {
+
+    .profile{
+        top: 3%;
+    }
     .toLeft {
         transform: translateX(-100%) translateY(15%) rotate(180deg);
     }
