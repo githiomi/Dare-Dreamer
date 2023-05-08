@@ -77,11 +77,11 @@ onAuthStateChanged(auth, (user) => {
 
         // If the user is signed in
         // Get the name of the user
-        const name = auth.currentUser.displayName
+        const name = user.displayName;
         console.log(uid + " Name: " + name);
 
         // Update UI with data
-        username.innerHTML = uid;
+        username.innerHTML = name;
 
     } else {
         // If the user is not signed in

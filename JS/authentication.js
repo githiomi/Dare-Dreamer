@@ -64,8 +64,7 @@ signUpButton.addEventListener('click', (e) => {
             // Add the new user's display name
             updateProfile(user, {
                 displayName: username, 
-                email: emailAddress,
-                photoURL: "https://example.com/jane-q-user/profile.jpg"
+                email: emailAddress
               }).then(() => {
                 console.log(`${user} has been added successfully`)
               }).catch((error) => {
