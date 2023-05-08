@@ -44,6 +44,10 @@ body {
     scroll-behavior: smooth;
 }
 
+li{
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }
@@ -63,7 +67,7 @@ a {
 }
 
 .toLeft {
-    transform: translateX(-400%);
+    transform: translateX(-350%) translateY(30%);
 }
 
 /* Clouds */
@@ -106,6 +110,104 @@ a {
 
 }
 
+/* Header Section */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.sticky {
+    background-color: var(--main-bg-color);
+    box-shadow: .1rem .1rem 1rem var(--main-theme-color);
+}
+
+.logo {
+    aspect-ratio: 1 / 1;
+    width: 6rem;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    margin-right: auto;
+}
+
+.navigation {
+    display: flex;
+}
+
+.navigation li {
+    position: relative;
+    margin: .5rem 1.2rem;
+    padding: .3rem;
+    transition: transform .4s ease-in-out;
+}
+
+.navigation li a {
+    color: var(--alt-white-color);
+    font-size: 1.03rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.navigation li:hover a,
+.navigation li a.active {
+    color: var(--main-theme-color);
+}
+
+.navigation li:hover {
+    transform: translateY(-2px);
+}
+
+.navigation li a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--main-theme-color);
+}
+
+.header.sticky .navigation li a {
+    color: var(--alt-white-color);
+}
+
+.header.sticky .navigation li a.active {
+    color: var(--main-theme-color);
+}
+
+.header.sticky .navigation li a.active::after {
+    background-color: var(--main-theme-color);
+}
+
+/* Theme Switcher & Hamburger */
+.theme-switcher {
+    margin: 0 1rem;
+}
+
+.hamburger i {
+    font-size: 2rem;
+    color: var(--main-theme-color);
+    cursor: pointer;
+    transition: all .3s ease-in;
+}
+
+.hamburger i{
+    display: none;
+}
+
+.header.sticky .hamburger i {
+    color: var(--main-theme-color);
+}
+
+.hamburger i:hover {
+    transform: scale(.9);
+}
 
 /* Introduction Section */
 #intro {
