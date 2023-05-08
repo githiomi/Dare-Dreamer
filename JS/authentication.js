@@ -58,7 +58,6 @@ signUpButton.addEventListener('click', (e) => {
             // Signed in 
             const user = userCredential.user;
             // Update UI
-            alert(`User ${user} created successfully!`);
             console.log(`Created user -----> ${user}`);
 
             // Add the new user's display name
