@@ -475,3 +475,9 @@ input[type="submit"] {
         margin: .5rem 0;
     }
 }
+
+@media all and (max-width:400px){
+    .cloud1, .cloud2 {
+        width: 10rem;
+    }
+}
