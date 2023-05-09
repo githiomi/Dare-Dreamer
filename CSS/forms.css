@@ -61,37 +61,37 @@ a {
 }
 
 /* Moon */
-.moon {
+.moon{
     aspect-ratio: 1/1;
     position: absolute;
     width: 30rem;
-    top: -8%;
-    right: -8%;
+    top: -10%;
+    right: -10%;
     border-radius: 55%;
-    box-shadow: 2px 2px 3rem var(--alt-white-color);
+    box-shadow: 2px 2px 5rem var(--alt-white-color);
+    animation: bounce 5s infinite linear alternate;
     transition: all .3s ease-in-out;
-    animation: bounce 5s infinite alternate;
 }
 
 /* Clouds */
-.cloud1 {
+.cloud1{
     position: absolute;
     z-index: 20;
     aspect-ratio: 16 / 9;
-    width: 30rem;
-    top: 0;
-    left: 14%;
+    width: 28rem;
+    top: 10%;
+    left: 20%;
     animation: bounce 2s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
-.cloud2 {
+.cloud2{
     position: absolute;
     z-index: 20;
     aspect-ratio: 16 / 9;
-    width: 30rem;
-    bottom: 0;
-    right: 14%;
+    width: 28rem;
+    bottom: 10%;
+    right: 20%;
     animation: bounce 3s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
@@ -103,29 +103,27 @@ a {
         transform: translateY(-10%);
     }
 
-    50% {
+    50%{
         transform: translateY(0%);
     }
 
     100% {
-        transform: translateY(10%);
+        transform: translateY(10);
     }
-
+    
 }
 
 /* Login form styling */
-.login {
+.formContainer {
     background-color: var(--card-bg-color);
-    width: 30%;
-    height: 80%;
+    width: 27%;
+    height: 50%;
     border-radius: 1rem;
     position: relative;
     overflow: hidden;
-    display: grid;
-    place-items: center;
 }
 
-.login form {
+.formContainer form {
     position: absolute;
     inset: 4px;
     background-color: var(--raisin-black-color);
@@ -137,7 +135,7 @@ a {
 }
 
 /* Spin Effect */
-.login::before {
+.formContainer::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -147,10 +145,10 @@ a {
     background: linear-gradient(0deg,
             transparent, transparent, var(--main-theme-color), var(--main-theme-color), var(--main-theme-color));
     transform-origin: bottom right;
-    animation: spin-effect 9s linear infinite;
+    animation: spin-effect 6s linear infinite;
 }
 
-.login::after {
+.formContainer::after {
     content: '';
     position: absolute;
     width: 100%;
@@ -160,8 +158,8 @@ a {
     background: linear-gradient(0deg,
             transparent, transparent, var(--main-theme-color), var(--main-theme-color), var(--main-theme-color));
     transform-origin: bottom right;
-    animation: spin-effect 9s linear infinite;
-    animation-delay: -4.5s;
+    animation: spin-effect 6s linear infinite;
+    animation-delay: -3s;
 }
 
 .borderSpin {
@@ -180,8 +178,8 @@ a {
     background: linear-gradient(0deg,
             transparent, transparent, var(--alt-white-color), var(--alt-white-color), var(--alt-white-color));
     transform-origin: bottom right;
-    animation: spin-effect 9s linear infinite;
-    animation-delay: -2.25s;
+    animation: spin-effect 6s linear infinite;
+    animation-delay: -1.5s;
 }
 
 .borderSpin::after {
@@ -194,8 +192,8 @@ a {
     background: linear-gradient(0deg,
             transparent, transparent, var(--alt-white-color), var(--alt-white-color), var(--alt-white-color));
     transform-origin: bottom right;
-    animation: spin-effect 9s linear infinite;
-    animation-delay: -6.75s;
+    animation: spin-effect 6s linear infinite;
+    animation-delay: -4.5s;
 }
 
 /* Animations */
@@ -211,7 +209,7 @@ a {
 
 }
 
-.login form h2 {
+.formContainer form h2 {
     letter-spacing: .2rem;
     font-size: 2.5rem;
     text-align: center;
@@ -219,27 +217,13 @@ a {
     text-transform: uppercase;
 }
 
-.login form .inputField {
+.formContainer form .inputField {
     position: relative;
     width: 80%;
     margin: 1.5rem auto;
 }
 
-.names {
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: .5rem;
-}
-
-.names .inputField {
-    margin: 0;
-}
-
-.names .inputField input,
-.login form .inputField input {
+.formContainer form .inputField input {
     position: relative;
     width: 100%;
     padding: .5rem;
@@ -253,7 +237,7 @@ a {
     z-index: 10;
 }
 
-.login form .inputField span {
+.formContainer form .inputField span {
     position: absolute;
     left: 0;
     padding: .5rem;
@@ -263,14 +247,14 @@ a {
     font-size: .9rem;
 }
 
-.login form .inputField input:valid~span,
-.login form .inputField input:focus~span {
+.formContainer form .inputField input:valid~span,
+.formContainer form .inputField input:focus~span {
     color: var(--main-theme-color);
     font-size: .8rem;
     transform: translateY(-30px);
 }
 
-.login form .inputField i {
+.formContainer form .inputField i {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -283,15 +267,15 @@ a {
     transition: all .5s ease-in-out;
 }
 
-.login form .inputField input:valid~i,
-.login form .inputField input:focus~i {
+.formContainer form .inputField input:valid~i,
+.formContainer form .inputField input:focus~i {
     height: 35px;
 }
 
 /* Links */
 .links {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 80%;
     margin: 1rem auto;
@@ -301,11 +285,25 @@ a {
     font-size: .8rem;
     color: var(--dull-white-color);
     transition: all .3s ease-in-out;
-    text-align: center;
 }
 
 .links a:hover {
     transform: scale(1.05);
+}
+
+.links a:nth-child(1) {
+    text-align: start;
+}
+
+.links a:nth-child(2) {
+    text-align: end;
+}
+
+.links a:nth-child(1):hover {
+    color: var(--alt-white-color);
+}
+
+.links a:nth-child(2):hover {
     color: var(--main-theme-color);
 }
 
@@ -374,115 +372,79 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-@media all and (max-width: 1500px) {
-
-    .moon {
+/* ----- Media Queries ----- */
+@media all and (max-width: 1600px) {
+    .moon{
         top: -10%;
         right: -10%;
     }
 
-    .cloud1 {
-        left: 10%;
+    .cloud1{
+        left: 13%;
     }
 
-    .cloud2 {
-        right: 10%;
+    .cloud2{
+        right: 13%;
     }
 
-    .login {
-        width: 30%;
+    .formContainer {
+        height: 55%;
     }
-
-    .names,
-    .login form .inputField,
-    .links,
-    .submit-btn {
-        width: 90%;
-    }
-
 }
 
-@media all and (max-width: 1300px) {
-    .moon {
+@media all and (max-width: 1500px) {
+    .moon{
         top: -13%;
         right: -13%;
     }
 
-    .cloud1 {
-        left: 5%;
+    .cloud1{
+        left: 11%;
     }
 
-    .cloud2 {
-        right: 5%;
+    .cloud2{
+        right: 11%;
     }
 }
 
-@media all and (max-width: 1200px) {
-
-    .moon {
+@media all and (max-width: 1300px) {
+    .moon{
         top: -15%;
         right: -15%;
     }
 
-    .cloud1 {
-        width: 27rem;
+    .cloud1{
+        left: 9%;
     }
 
-    .cloud2 {
-        width: 27rem;
-    }
-
-    .login {
-        width: 40%;
-        height: 85%;
-    }
-
-    .links {
-        flex-direction: column;
-    }
-
-    .links a {
-        margin: .5rem 0;
+    .cloud2{
+        right: 9%;
     }
 }
 
 @media all and (max-width: 1100px) {
 
-    .moon {
-        top: -20%;
-        right: -20%;
+    .moon{
+        top: -16%;
+        right: -16%;
+        width: 27rem;
     }
 
-    .cloud1 {
+    .cloud1{
         width: 23rem;
+        top: 3%;
         left: 0;
     }
 
-    .cloud2 {
+    .cloud2{
         width: 23rem;
+        bottom: 3%;
         right: 0;
     }
-}
 
-
-@media all and (max-width: 800px) {
-
-    .moon {
-        top: -20%;
-        right: -20%;
-    }
-
-    .cloud1 {
-        width: 20rem;
-    }
-
-    .cloud2 {
-        width: 20rem;
-    }
-
-    .login {
-        width: 50%;
-        height: 85%;
+    .formContainer {
+        width: 40%;
+        height: 60%;
     }
 
     .links {
@@ -494,30 +456,22 @@ input[type="submit"] {
     }
 }
 
-@media all and (max-width:600px) {
+@media all and (max-width: 700px) {
 
-    .moon {
+    .formContainer {
+        width: 70%;
+        height: 60%;
+    }
+
+    .cloud1, .cloud2 {
         width: 20rem;
-        top: -20%;
-        right: -20%;
     }
 
-    .cloud1 {
-        width: 13rem;
-    }
-
-    .cloud2 {
-        width: 15rem;
-    }
-
-    .login {
-        width: 60%;
-        height: 95%;
-    }
-
-    .names {
-        width: 100%;
+    .links {
         flex-direction: column;
-        gap: 0;
+    }
+
+    .links a {
+        margin: .5rem 0;
     }
 }

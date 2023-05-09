@@ -1,0 +1,236 @@
+/* Clouds */
+.cloud1 {
+    top: 0;
+    left: 14%;
+}
+
+.cloud2 {
+    bottom: 0;
+    right: 14%;
+}
+
+/* Sign Up Form spin effect */
+.formContainer {
+    width: 30%;
+    height: 80%;
+}
+
+.formContainer::before {
+    animation: spin-effect 9s linear infinite;
+}
+
+.formContainer::after {
+    animation: spin-effect 9s linear infinite;
+    animation-delay: -4.5s;
+}
+
+.borderSpin::before{
+    animation: spin-effect 9s linear infinite;
+    animation-delay: -2.25s;
+}
+
+.borderSpin::after{
+    animation: spin-effect 9s linear infinite;
+    animation-delay: -6.75s;
+}
+
+.names {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+}
+
+.names .inputField {
+    margin: 0;
+}
+
+.names .inputField input,
+.formContainer form .inputField input {
+    position: relative;
+    width: 100%;
+    padding: .5rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    color: var(--main-bg-color);
+    letter-spacing: .08rem;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* To Login */
+.toLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.toLogin a {
+    font-size: .8rem;
+    color: var(--dull-white-color);
+    transition: all .3s ease-in-out;
+    text-align: center;
+}
+
+.toLogin a:hover {
+    transform: scale(1.05);
+    color: var(--main-theme-color);
+}
+
+/* Media Quesries */
+@media all and (max-width: 1500px) {
+
+    .moon {
+        top: -10%;
+        right: -10%;
+    }
+
+    .cloud1 {
+        left: 10%;
+    }
+
+    .cloud2 {
+        right: 10%;
+    }
+
+    .login {
+        width: 30%;
+    }
+
+    .names,
+    .formContainer form .inputField,
+    .submit-btn {
+        width: 90%;
+    }
+
+}
+
+@media all and (max-width: 1300px) {
+    .moon {
+        top: -13%;
+        right: -13%;
+    }
+
+    .cloud1 {
+        left: 5%;
+    }
+
+    .cloud2 {
+        right: 5%;
+    }
+}
+
+@media all and (max-width: 1200px) {
+
+    .moon {
+        top: -15%;
+        right: -15%;
+    }
+
+    .cloud1 {
+        width: 24rem;
+    }
+
+    .cloud2 {
+        width: 24rem;
+    }
+
+    .formContainer {
+        width: 40%;
+        height: 85%;
+    }
+
+    .toLogin a {
+        margin: .5rem 0;
+    }
+}
+
+@media all and (max-width: 1100px) {
+
+    .moon {
+        top: -20%;
+        right: -20%;
+    }
+
+    .cloud1 {
+        width: 20rem;
+        left: 0;
+    }
+
+    .cloud2 {
+        width: 20rem;
+        right: 0;
+    }
+}
+
+
+@media all and (max-width: 800px) {
+
+    .moon {
+        top: -20%;
+        right: -20%;
+    }
+
+    .cloud1 {
+        width: 15rem;
+    }
+
+    .cloud2 {
+        width: 15rem;
+    }
+
+    .formContainer {
+        width: 50%;
+        height: 85%;
+    }
+
+    .names{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .formContainer form .inputField {
+        margin: 1.2rem auto;
+    }
+
+    .toLogin {
+        flex-direction: column;
+    }
+
+    .toLogin a {
+        margin: .5rem 0;
+    }
+}
+
+@media all and (max-width:600px) {
+
+    .moon {
+        width: 20rem;
+        top: -20%;
+        right: -20%;
+    }
+
+    .cloud1 {
+        width: 11rem;
+    }
+
+    .cloud2 {
+        width: 13rem;
+    }
+
+    .formContainer {
+        width: 60%;
+        height: 95%;
+    }
+
+    .names {
+        width: 100%;
+        gap: 0;
+    }
+}
