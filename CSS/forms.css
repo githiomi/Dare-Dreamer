@@ -479,6 +479,6 @@ input[type="submit"] {
 
 @media all and (max-width:600px){
     .cloud1, .cloud2 {
-        width: 11rem;
+        width: 14rem;
     }
 }
