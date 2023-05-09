@@ -1,10 +1,10 @@
-# <a href="https://githiomi.github.io/Dare-Dreamer" target="_blank"><img style="margin: 0px 5px" src="./Assets/Images/Dream_Logo.png" alt="Click Hive" height="40" /></a>DARE DREAMER
+# <a href="https://githiomi.github.io/Dare-To-Dream" target="_blank"><img style="margin: 0px 5px" src="./Assets/Images/Dream_Logo.png" alt="Dare To Dream" height="40" /></a>DARE TO DREAM
 
 > Created by <a href="https://www.github.com/githiomi"> Daniel Githiomi </a>
 
 ## 🚧 Description
 
-`Dare Dreamer` is a web application that enables users of the application to put in their dreams (or nightmares) and then we handle the rest by giving the user a premonitory prediction and interpretation of what the dream could mean.
+`Dare To Dream` is a web application that enables users of the application to put in their dreams (or nightmares) and then we handle the rest by giving the user a premonitory prediction and interpretation of what the dream could mean.
 
 ## 👀 Product Preview
 
@@ -14,7 +14,7 @@
 
 You can view the the website using the GitHub live pages.
 
-* Link: [Dare Dreamer](https://githiomi.github.io/Dare-Dreamer)
+* Link: [Dare Dreamer](https://githiomi.github.io/Dare-To-Dream)
 
 ## 🏁 Webiste Configurations
 
@@ -52,11 +52,11 @@ No bugs to report at the moment! the system works efficiently at 100% guaranteed
 
 In order to enjoy the features of this application you will need to:
 
-* Git clone [this](https://github.com/githiomi/Dare-Dreamer) into your terminal to your
+* Git clone [this](https://github.com/githiomi/Dare-To-Dream) into your terminal to your
   desired directory.
 * Open the project in an IDE of choice (Eg: Visual Studio Code).
 * Run the project using the `Live Server` extension.
-* Enjoy the `Dare Dreamer` website.
+* Enjoy the `Dare To Dream` website.
 
 ## 📧 Support and contact details
 
