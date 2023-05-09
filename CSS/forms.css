@@ -48,12 +48,13 @@
 
 body {
     background-color: var(--main-bg-color);
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-items: center;
     color: var(--alt-white-color);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+    position: relative;
 }
 
 a {
@@ -464,7 +465,7 @@ input[type="submit"] {
     }
 
     .cloud1, .cloud2 {
-        width: 20rem;
+        width: 18rem;
     }
 
     .links {
@@ -476,8 +477,8 @@ input[type="submit"] {
     }
 }
 
-@media all and (max-width:400px){
+@media all and (max-width:600px){
     .cloud1, .cloud2 {
-        width: 10rem;
+        width: 11rem;
     }
 }

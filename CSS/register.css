@@ -177,11 +177,7 @@
         right: -20%;
     }
 
-    .cloud1 {
-        width: 15rem;
-    }
-
-    .cloud2 {
+    .cloud1, .cloud2 {
         width: 15rem;
     }
 
@@ -216,16 +212,12 @@
         right: -20%;
     }
 
-    .cloud1 {
+    .cloud1, .cloud2 {
         width: 11rem;
     }
 
-    .cloud2 {
-        width: 13rem;
-    }
-
     .formContainer {
-        width: 60%;
+        width: 70%;
         height: 95%;
     }
 
