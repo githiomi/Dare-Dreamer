@@ -83,10 +83,12 @@ signUpButton.addEventListener('click', (e) => {
             console.log("Data saved to DB");
 
             // If user is created successfully, go to home page
-            if (user){
+            if (user) {
                 console.log(user);
-                window.location = "../index.html";
-            }else{
+                window.location.href = '/Dare-Dreamer/index.html';
+            } else {
+                errorContainer.innerHTML += `You could not be signed up. Try again shortly.`;
+                errorContainer.classList.add('display');
                 return;
             }
 

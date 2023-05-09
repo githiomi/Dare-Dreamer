@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
 
 // For the Database
 import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
@@ -25,15 +24,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const auth = getAuth();
 
 // Add event listener to the sign up button
 const loginButton = document.getElementById('loginButton');
+const toIndex = document.querySelector('.toIndex');
 const errorContainer = document.querySelector('.error');
 
-loginButton.addEventListener('click', (e) => {
+toIndex.addEventListener('click', (e) => {
 
     // What happens when the sign up button is clicked
     e.preventDefault();
@@ -48,24 +47,26 @@ loginButton.addEventListener('click', (e) => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            
+
             // Update the UI
             console.log(`${user} has been logged in`);
 
             // Update DB data
             const lastLoggedIn = new Date();
             update(ref(database, 'Dreamers/' + user.uid), {
-                lastLoggedIn : lastLoggedIn
+                lastLoggedIn: lastLoggedIn
             });
 
             // If user is valid, log in
-            if (user){
+            if (user) {
                 console.log(user);
-                window.location = "../index.html";
-            }else{
+                window.location.href = '/Dare-Dreamer/index.html';
+            } else {
+                errorContainer.innerHTML += `You could not be logged in. Try again shortly.`;
+                errorContainer.classList.add('display');
                 return;
-            }  
-            
+            }
+
         })
         .catch((error) => {
             const errorCode = error.code;
