@@ -38,9 +38,6 @@ interpreteBtn.addEventListener('click', (e) => {
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
 
-// For the Database
-import { getDatabase, update, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
-
 // For authentication
 import { getAuth, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-auth.js";
 
@@ -61,7 +58,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
 const auth = getAuth();
 
 // UI
@@ -86,7 +82,7 @@ onAuthStateChanged(auth, (user) => {
     } else {
         // If the user is not signed in
         // Re-route to login page
-        window.location = "../HTML/login.html"
+        window.location.href = "/Dare-To-Dream/HTML/login.html"
     }
 });
 

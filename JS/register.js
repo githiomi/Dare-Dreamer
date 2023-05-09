@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-analytics.js";
 
 // For the Database
 import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/9.21.0/firebase-database.js";
@@ -25,7 +24,6 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const database = getDatabase(app);
 const auth = getAuth();
 
@@ -85,7 +83,8 @@ signUpButton.addEventListener('click', (e) => {
             // If user is created successfully, go to home page
             if (user) {
                 console.log(user);
-                window.location.href = '/Dare-Dreamer/index.html';
+                e.preventDefault();
+                window.location.href = '/Dare-To-Dream/index.html';
             } else {
                 errorContainer.innerHTML += `You could not be signed up. Try again shortly.`;
                 errorContainer.classList.add('display');

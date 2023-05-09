@@ -60,7 +60,7 @@ toIndex.addEventListener('click', (e) => {
             // If user is valid, log in
             if (user) {
                 console.log(user);
-                window.location.href = '/Dare-Dreamer/index.html';
+                window.location.href = '/Dare-To-Dream/index.html';
             } else {
                 errorContainer.innerHTML += `You could not be logged in. Try again shortly.`;
                 errorContainer.classList.add('display');
