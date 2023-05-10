@@ -56,6 +56,7 @@ body {
     font-family: 'Poppins', sans-serif;
     position: relative;
     background: url('../Assets/Images/Stary_Night_Sky.jpeg');
+    background-repeat: repeat;
     overflow: hidden;
 }
 
@@ -430,7 +431,7 @@ input[type="submit"] {
     }
 
     .formContainer{
-        width: 40%;
+        width: 4%;
     }
 }
 

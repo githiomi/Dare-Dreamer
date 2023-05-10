@@ -53,6 +53,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     background: url('../Assets/Images/Stary_Night_Sky.jpeg');
+    background-repeat: repeat;
 }
 
 li {
