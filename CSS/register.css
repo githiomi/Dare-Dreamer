@@ -1,12 +1,12 @@
 /* Clouds */
 .cloud1 {
     top: 0;
-    left: 14%;
+    left: 15%;
 }
 
 .cloud2 {
     bottom: 0;
-    right: 14%;
+    right: 15%;
 }
 
 /* Sign Up Form spin effect */
@@ -83,7 +83,7 @@
     color: var(--main-theme-color);
 }
 
-/* Media Quesries */
+/* Media Queries */
 @media all and (max-width: 1500px) {
 
     .moon {
@@ -154,8 +154,8 @@
 @media all and (max-width: 1100px) {
 
     .moon {
-        top: -20%;
-        right: -20%;
+        top: -16%;
+        right: -16%;
     }
 
     .cloud1 {
@@ -171,11 +171,6 @@
 
 
 @media all and (max-width: 800px) {
-
-    .moon {
-        top: -20%;
-        right: -20%;
-    }
 
     .cloud1, .cloud2 {
         width: 18rem;
@@ -204,21 +199,20 @@
     }
 }
 
-@media all and (max-width:600px) {
+@media all and (max-width:700px) {
 
     .moon {
-        width: 20rem;
         top: -20%;
         right: -20%;
     }
 
     .cloud1, .cloud2 {
-        width: 14rem;
+        width: 23rem;
     }
 
     .formContainer {
         width: 70%;
-        height: 95%;
+        height: 90%;
     }
 
     .names {

@@ -48,13 +48,15 @@
 
 body {
     background-color: var(--main-bg-color);
-    min-height: 100vh;
+    height: 100vh;
+    width: 100%;
     display: grid;
     place-items: center;
     color: var(--alt-white-color);
-    overflow: hidden;
     font-family: 'Poppins', sans-serif;
     position: relative;
+    background: url('../Assets/Images/Stary_Night_Sky.jpeg');
+    overflow: hidden;
 }
 
 a {
@@ -62,38 +64,39 @@ a {
 }
 
 /* Moon */
-.moon{
+.moon {
     aspect-ratio: 1/1;
     position: absolute;
-    width: 30rem;
+    width: 28rem;
     top: -10%;
     right: -10%;
     border-radius: 55%;
     box-shadow: 2px 2px 5rem var(--alt-white-color);
-    animation: bounce 5s infinite linear alternate;
     transition: all .3s ease-in-out;
+    z-index: -2;
 }
 
 /* Clouds */
-.cloud1{
+.cloud1 {
     position: absolute;
-    z-index: 20;
+    z-index: 3;
     aspect-ratio: 16 / 9;
     width: 28rem;
     top: 10%;
     left: 20%;
+    isolation: isolate;
     animation: bounce 2s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
-.cloud2{
+.cloud2 {
     position: absolute;
-    z-index: 20;
+    z-index: 3;
     aspect-ratio: 16 / 9;
     width: 28rem;
     bottom: 10%;
     right: 20%;
-    animation: bounce 3s infinite linear alternate;
+    animation: bounce 4s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
@@ -101,17 +104,17 @@ a {
 @keyframes bounce {
 
     0% {
-        transform: translateY(-10%);
+        transform: translateY(-5%);
     }
 
-    50%{
+    50% {
         transform: translateY(0%);
     }
 
     100% {
-        transform: translateY(10);
+        transform: translateY(5%);
     }
-    
+
 }
 
 /* Login form styling */
@@ -216,6 +219,8 @@ a {
     text-align: center;
     padding: 1rem 0;
     text-transform: uppercase;
+    z-index: 30;
+    color: var(--main-theme-color);
 }
 
 .formContainer form .inputField {
@@ -349,11 +354,11 @@ a {
 }
 
 /* Error message */
-.error{
+.error {
     display: none;
 }
 
-.display{
+.display {
     display: block;
     font-size: .7rem;
     text-align: center;
@@ -375,16 +380,16 @@ input[type="submit"] {
 
 /* ----- Media Queries ----- */
 @media all and (max-width: 1600px) {
-    .moon{
+    .moon {
         top: -10%;
         right: -10%;
     }
 
-    .cloud1{
+    .cloud1 {
         left: 13%;
     }
 
-    .cloud2{
+    .cloud2 {
         right: 13%;
     }
 
@@ -394,51 +399,57 @@ input[type="submit"] {
 }
 
 @media all and (max-width: 1500px) {
-    .moon{
+    .moon {
         top: -13%;
         right: -13%;
     }
 
-    .cloud1{
+    .cloud1 {
         left: 11%;
     }
 
-    .cloud2{
+    .cloud2 {
         right: 11%;
     }
 }
 
 @media all and (max-width: 1300px) {
-    .moon{
+    .moon {
         top: -15%;
         right: -15%;
     }
 
-    .cloud1{
+    .cloud1 {
         left: 9%;
+        z-index: -1;
     }
 
-    .cloud2{
+    .cloud2 {
         right: 9%;
+        z-index: -1;
+    }
+
+    .formContainer{
+        width: 40%;
     }
 }
 
 @media all and (max-width: 1100px) {
 
-    .moon{
+    .moon {
         top: -16%;
         right: -16%;
         width: 27rem;
     }
 
-    .cloud1{
-        width: 23rem;
+    .cloud1 {
+        width: 25rem;
         top: 3%;
         left: 0;
     }
 
-    .cloud2{
-        width: 23rem;
+    .cloud2 {
+        width: 25rem;
         bottom: 3%;
         right: 0;
     }
@@ -459,13 +470,19 @@ input[type="submit"] {
 
 @media all and (max-width: 700px) {
 
+    .moon {
+        top: -20%;
+        right: -20%;
+    }
+
+    .cloud1,
+    .cloud2 {
+        width: 23rem;
+    }
+
     .formContainer {
         width: 70%;
         height: 60%;
-    }
-
-    .cloud1, .cloud2 {
-        width: 18rem;
     }
 
     .links {
@@ -474,11 +491,5 @@ input[type="submit"] {
 
     .links a {
         margin: .5rem 0;
-    }
-}
-
-@media all and (max-width:600px){
-    .cloud1, .cloud2 {
-        width: 14rem;
     }
 }

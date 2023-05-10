@@ -52,6 +52,7 @@ body {
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    background: url('../Assets/Images/Stary_Night_Sky.jpeg');
 }
 
 li {
@@ -82,23 +83,23 @@ a {
 /* Clouds */
 .cloud1 {
     position: fixed;
-    z-index: 20;
+    z-index: -10;
     aspect-ratio: 16 / 9;
-    width: 30rem;
+    width: 35rem;
     top: 10%;
-    left: 10%;
-    animation: bounce 2s infinite linear alternate;
+    left: 5%;
+    animation: bounce 8s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
 .cloud2 {
     position: fixed;
-    z-index: 20;
+    z-index: -10;
     aspect-ratio: 16 / 9;
-    width: 30rem;
+    width: 35rem;
     bottom: 10%;
-    right: 10%;
-    animation: bounce 3s infinite linear alternate;
+    right: 5%;
+    animation: bounce 16s infinite linear alternate;
     transition: all .3s ease-in-out;
 }
 
@@ -198,13 +199,14 @@ a {
     text-align: center;
     margin: 4rem 0;
     font-family: 'Love Ya Like A Sister', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
 }
 
 .special {
     color: var(--main-theme-color);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
+    font-family: 'Love Ya Like A Sister', sans-serif;
 }
 
 .dribble {
@@ -459,7 +461,7 @@ input[type="submit"] {
         width: 4rem;
     }
 
-    .bio{
+    .bio {
         font-size: .9rem;
     }
 
@@ -585,9 +587,10 @@ input[type="submit"] {
 
 @media all and (max-width: 400px) {
 
-    .profile{
+    .profile {
         top: 3%;
     }
+
     .toLeft {
         transform: translateX(-100%) translateY(15%) rotate(180deg);
     }
