@@ -121,7 +121,7 @@ a {
 /* Login form styling */
 .formContainer {
     background-color: var(--card-bg-color);
-    width: 27%;
+    width: 30%;
     height: 50%;
     border-radius: 1rem;
     position: relative;
@@ -431,7 +431,7 @@ input[type="submit"] {
     }
 
     .formContainer{
-        width: 4%;
+        width: 40%;
     }
 }
 
